@@ -1,9 +1,6 @@
 .App{
     height: 100vh;
     width: 100vw;
-    background-image: url("./images/cloudy.jpg");
-    background-size: cover;
-    background-position: center;
     box-shadow: inset 0 0 0 2000px rgba(20, 20, 20, 0.4);
 }
 .header{

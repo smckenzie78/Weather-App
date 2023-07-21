@@ -1,14 +1,28 @@
-import React from "react";
+import React, { Component } from "react";
 import '../styles/CurrentForecast.css';
 
-function CurrentForecast(){
-    return(
-        <div className="information">
-            <p id="location">Jacksonville, Florida</p>
-            <p id="temperature">92&deg;</p>
-            <p id="weather">Cloudy</p>
-        </div>
-    );
+class CurrentForecast extends Component {
+
+    render(){
+
+        let commaspace = ''
+        let degreesymbol = ''
+        
+        if(this.props.temperature != ""){
+            degreesymbol = '°'
+        }
+        if(this.props.city != ""){
+            commaspace = ', '
+        }
+
+        return(
+            <div className="information">
+                <p id="location">{this.props.city + commaspace}{this.props.region}</p>
+                <p id="temperature">{this.props.temperature + degreesymbol}</p>
+                <p id="weather">{this.props.conditions}</p>
+            </div>
+        );
+    }
 }
 
 export default CurrentForecast;
