@@ -3,6 +3,7 @@ import './App.css';
 import Searchbar from "./components/Searchbar";
 import CurrentForecast from "./components/CurrentForecast";
 import { apikey } from "./apikey";
+import { weatherImage } from "./weatherImage";
 
 class App extends Component {
 
@@ -26,13 +27,15 @@ class App extends Component {
     })
   }
 
+  
+
   render(){
     const { city } = this.state;
     const { region } = this.state;
     const { temperature } = this.state;
     const { conditions } = this.state;
     return(
-      <div className="App">
+      <div className="App" style={{backgroundImage: 'url()'}}>
         <div className="header">
           <Searchbar parentCallback={this.handleCallback}/>
         </div>
