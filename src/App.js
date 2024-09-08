@@ -3,7 +3,8 @@ import './App.css';
 import Searchbar from "./components/Searchbar";
 import CurrentForecast from "./components/CurrentForecast";
 import { apikey } from "./apikey";
-import { weatherImage } from "./weatherImage";
+import { getBackgroundImage } from "./getBackground";
+import cloudy from './images/cloudy.jpg';
 
 class App extends Component {
 
@@ -12,6 +13,7 @@ class App extends Component {
     region: "",
     temperature: "",
     conditions: "",
+    image: "",
   }
 
   handleCallback = (childData) => {
@@ -23,23 +25,24 @@ class App extends Component {
         region: data.location.region,
         temperature: data.current.temp_f,
         conditions: data.current.condition.text,
+        image: getBackgroundImage(data.current.condition.text),
       })
     })
   }
 
-  
 
   render(){
     const { city } = this.state;
     const { region } = this.state;
     const { temperature } = this.state;
     const { conditions } = this.state;
+    const { image } = this.state;
     return(
-      <div className="App" style={{backgroundImage: 'url()'}}>
+      <div className="App" style={{backgroundImage: 'url('+image+')',backgroundSize: 'cover'}}>
         <div className="header">
           <Searchbar parentCallback={this.handleCallback}/>
-        </div>
-        <div className="main">
+        </div> 
+        <div className="main" >
           <CurrentForecast 
             city = {city}
             region = {region}
