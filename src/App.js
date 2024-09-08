@@ -16,6 +16,21 @@ class App extends Component {
     image: "",
   }
 
+  //As soon as component renders, call API and get weather using the user's IP
+  componentDidMount(){
+    fetch("http://api.weatherapi.com/v1/current.json?key="+ apikey +"&q=auto:ip&aqi=no")
+    .then((response) => response.json())
+    .then((data) => {
+      this.setState({
+        city: data.location.name,
+        region: data.location.region,
+        temperature: data.current.temp_f,
+        conditions: data.current.condition.text,
+        image: getBackgroundImage(data.current.condition.text),
+      })
+    })
+  }
+
   handleCallback = (childData) => {
     fetch("http://api.weatherapi.com/v1/current.json?key="+ apikey +"&q=" + childData + "&aqi=no")
     .then((response) => response.json())

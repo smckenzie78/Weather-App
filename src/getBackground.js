@@ -11,8 +11,7 @@ export const getBackgroundImage = (condition) => {
         case 'Cloudy':
             return cloudy;
         case 'Overcast':
-
-            break;
+            return cloudy;
         case 'Light rain':
             return cloudy;
         case 'Patchy rain possible':
