@@ -4,7 +4,6 @@ import Searchbar from "./components/Searchbar";
 import CurrentForecast from "./components/CurrentForecast";
 import { apikey } from "./apikey";
 import { getBackgroundImage } from "./getBackground";
-import cloudy from './images/cloudy.jpg';
 
 class App extends Component {
 
@@ -21,13 +20,16 @@ class App extends Component {
     fetch("http://api.weatherapi.com/v1/current.json?key="+ apikey +"&q=auto:ip&aqi=no")
     .then((response) => response.json())
     .then((data) => {
-      this.setState({
-        city: data.location.name,
-        region: data.location.region,
-        temperature: data.current.temp_f,
-        conditions: data.current.condition.text,
-        image: getBackgroundImage(data.current.condition.text),
-      })
+      try{
+        this.setState({
+          city: data.location.name,
+          region: data.location.region,
+          temperature: data.current.temp_f,
+          conditions: data.current.condition.text,
+          image: getBackgroundImage(data.current.condition.text),
+        })
+    }
+      catch(error){}
     })
   }
 
@@ -35,13 +37,16 @@ class App extends Component {
     fetch("http://api.weatherapi.com/v1/current.json?key="+ apikey +"&q=" + childData + "&aqi=no")
     .then((response) => response.json())
     .then((data) => {
-      this.setState({
-        city: data.location.name,
-        region: data.location.region,
-        temperature: data.current.temp_f,
-        conditions: data.current.condition.text,
-        image: getBackgroundImage(data.current.condition.text),
-      })
+      try{
+        this.setState({
+          city: data.location.name,
+          region: data.location.region,
+          temperature: data.current.temp_f,
+          conditions: data.current.condition.text,
+          image: getBackgroundImage(data.current.condition.text),
+        })
+    }
+      catch(error){}
     })
   }
 
