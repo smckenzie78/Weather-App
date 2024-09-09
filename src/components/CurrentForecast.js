@@ -9,7 +9,7 @@ class CurrentForecast extends Component {
         let degreesymbol = ''
         
         if(this.props.temperature !== ""){
-            degreesymbol = '°'
+            degreesymbol = '°F'
         }
         if(this.props.city !== ""){
             commaspace = ', '

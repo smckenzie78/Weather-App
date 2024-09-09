@@ -9,6 +9,7 @@ class Searchbar extends Component{
     }
 
     optionSelect(option) {
+        console.log('what');
         document.getElementById('searchbar').value = option;
         this.props.parentCallback(document.getElementById('searchbar').value);
         this.setState({
