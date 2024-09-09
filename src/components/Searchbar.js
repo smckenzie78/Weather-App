@@ -55,7 +55,7 @@ class Searchbar extends Component{
 
         return(
             <div className="search-container">
-                <input type="text" id="searchbar" onKeyDown={this.onTrigger} placeholder="Enter in a location..." autoComplete="off" onBlur={() => this.onBlurSearchBar()}></input>
+                <input type="text" id="searchbar" onKeyDown={this.onTrigger} placeholder="Enter in a location..." autoComplete="off"></input>
                 <div className="search-options">
                     {searchOptions}
                 </div>

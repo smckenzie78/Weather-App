@@ -1,6 +1,3 @@
-.container{
-
-}
 .search-container{
     position: relative;
     height: 100%;
@@ -38,7 +35,7 @@ input{
     border-style: solid;
     outline: none;
     height: 70%;
-    width: 25%;
+    width: 50%;
     font-size: 150%;
     background-color: rgba(0, 0, 0, 0.120);
     color: white;
@@ -56,4 +53,181 @@ input:focus{
 ::placeholder{
     color: white;
     opacity: 0.5;
+}
+
+@media (max-width: 425px) {
+    .search-container{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .search-options{
+        position: absolute;
+        display:inline-block;
+        top:90%;
+        width: 26%;
+    }
+    
+    .option{
+        background-color: rgba(255, 255, 255, 0);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        text-align: center;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        color: white;
+    }
+    
+    .option:hover{
+        border-color: white;
+        cursor: pointer;
+    }
+    
+    input{
+        border-radius: 20px;
+        border-color: rgba(255, 255, 255, 0.3);
+        border-style: solid;
+        outline: none;
+        height: 50%;
+        width: 75%;
+        font-size: 150%;
+        background-color: rgba(0, 0, 0, 0.120);
+        color: white;
+        text-align: center;
+    }
+    
+    input:hover{
+        border-color: white;
+    }
+    
+    input:focus{
+        border-color: white;
+    }
+    
+    ::placeholder{
+        color: white;
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-container{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .search-options{
+        position: absolute;
+        display:inline-block;
+        top:90%;
+        width: 26%;
+    }
+    
+    .option{
+        background-color: rgba(255, 255, 255, 0);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        text-align: center;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        color: white;
+    }
+    
+    .option:hover{
+        border-color: white;
+        cursor: pointer;
+    }
+    
+    input{
+        border-radius: 20px;
+        border-color: rgba(255, 255, 255, 0.3);
+        border-style: solid;
+        outline: none;
+        height: 50%;
+        width: 75%;
+        font-size: 150%;
+        background-color: rgba(0, 0, 0, 0.120);
+        color: white;
+        text-align: center;
+    }
+    
+    input:hover{
+        border-color: white;
+    }
+    
+    input:focus{
+        border-color: white;
+    }
+    
+    ::placeholder{
+        color: white;
+        opacity: 0.5;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .search-container{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .search-options{
+        position: absolute;
+        display:inline-block;
+        top:90%;
+        width: 26%;
+    }
+    
+    .option{
+        background-color: rgba(255, 255, 255, 0);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        text-align: center;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        color: white;
+    }
+    
+    .option:hover{
+        border-color: white;
+        cursor: pointer;
+    }
+    
+    input{
+        border-radius: 20px;
+        border-color: rgba(255, 255, 255, 0.3);
+        border-style: solid;
+        outline: none;
+        height: 50%;
+        width: 75%;
+        font-size: 150%;
+        background-color: rgba(0, 0, 0, 0.120);
+        color: white;
+        text-align: center;
+    }
+    
+    input:hover{
+        border-color: white;
+    }
+    
+    input:focus{
+        border-color: white;
+    }
+    
+    ::placeholder{
+        color: white;
+        opacity: 0.5;
+    }
 }

@@ -31,3 +31,75 @@
 
 }
 
+@media (max-width: 425px) {
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    
+    .information{
+        height: 100%;
+        color: white;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    #location{
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    #temperature{
+        font-size: 100px;
+        text-align: center;
+    
+    }
+    
+    #weather{
+        font-size: 32px;
+        text-align: center;
+    
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    
+    .information{
+        height: 100%;
+        color: white;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    #location{
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    #temperature{
+        font-size: 100px;
+        text-align: center;
+    
+    }
+    
+    #weather{
+        font-size: 32px;
+        text-align: center;
+    
+    }
+    
+}
+
