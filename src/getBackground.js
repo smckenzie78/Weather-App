@@ -1,13 +1,13 @@
 import cloudy from './images/cloudy.jpg';
 import sunny from './images/sunny.jpg'
+import partlycloudy from './images/partlycloudy.jpeg'
 
 export const getBackgroundImage = (condition) => {
     switch(condition){
         case 'Sunny':
             return sunny;
         case 'Partly cloudy':
-
-            break;
+            return partlycloudy;
         case 'Cloudy':
             return cloudy;
         case 'Overcast':

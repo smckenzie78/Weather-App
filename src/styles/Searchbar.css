@@ -1,4 +1,8 @@
+.container{
+
+}
 .search-container{
+    position: relative;
     height: 100%;
     width: 100%;
     display: flex;
@@ -6,6 +10,28 @@
     justify-content: center;
     align-items: center;
 }
+
+.search-options{
+    position: absolute;
+    display:inline-block;
+    top:90%;
+    width: 26%;
+}
+
+.option{
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: white;
+}
+
+.option:hover{
+    border-color: white;
+    cursor: pointer;
+}
+
 input{
     border-radius: 20px;
     border-color: rgba(255, 255, 255, 0.3);
