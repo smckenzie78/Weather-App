@@ -19,7 +19,7 @@ class App extends Component {
 
   //As soon as component renders, call API and get current weather and forecast using the user's IP
   componentDidMount(){
-    fetch("http://api.weatherapi.com/v1/current.json?key="+ apikey +"&q=auto:ip&aqi=no")
+    fetch("http://api.weatherapi.com/v1/current.json?key="+ process.env.KEY +"&q=auto:ip&aqi=no")
     .then((response) => response.json())
     .then((data) => {
       try{
@@ -34,7 +34,7 @@ class App extends Component {
     }
       catch(error){}
     })
-    fetch("http://api.weatherapi.com/v1/forecast.json?key="+ apikey +"&q=auto:ip&aqi=no")
+    fetch("http://api.weatherapi.com/v1/forecast.json?key="+ process.env.KEY +"&q=auto:ip&aqi=no")
     .then((response) => response.json())
     .then((data) => {
         try{
@@ -49,7 +49,7 @@ class App extends Component {
 
   //Function called when user completes search request. Parameter takes location and makes API call with it to get current weather and forecast of requested location
   handleCallback = (childData) => {
-    fetch("http://api.weatherapi.com/v1/current.json?key="+ apikey +"&q=" + childData + "&aqi=no")
+    fetch("http://api.weatherapi.com/v1/current.json?key="+ process.env.KEY +"&q=" + childData + "&aqi=no")
     .then((response) => response.json())
     .then((data) => {
       try{
@@ -63,7 +63,7 @@ class App extends Component {
     }
       catch(error){}
     })
-    fetch("http://api.weatherapi.com/v1/forecast.json?key="+ apikey +"&q=" + childData + "&aqi=no")
+    fetch("http://api.weatherapi.com/v1/forecast.json?key="+ process.env.KEY +"&q=" + childData + "&aqi=no")
     .then((response) => response.json())
     .then((data) => {
         try{
