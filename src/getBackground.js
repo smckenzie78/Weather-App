@@ -1,6 +1,8 @@
 import cloudy from './images/cloudy.jpg';
 import sunny from './images/sunny.jpg'
 import partlycloudy from './images/partlycloudy.jpeg'
+import clear from './images/clear.jpg'
+import mist from './images/JFDZ7U577FFBTCTSLUKDQDSAYQ.png'
 
 export const getBackgroundImage = (condition) => {
     switch(condition){
@@ -14,6 +16,10 @@ export const getBackgroundImage = (condition) => {
             return cloudy;
         case 'Light rain':
             return cloudy;
+        case 'Clear':
+            return clear;
+        case 'Mist':
+            return mist;
         case 'Patchy rain possible':
 
             break;

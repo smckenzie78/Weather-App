@@ -40,9 +40,9 @@ input{
     height: 70%;
     width: 25%;
     font-size: 150%;
-    padding-left: 1%;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(0, 0, 0, 0.120);
     color: white;
+    text-align: center;
 }
 
 input:hover{
