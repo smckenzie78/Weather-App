@@ -3,6 +3,7 @@ import '../styles/Searchbar.css';
 import { apikey } from "../apikey";
 
 const API_KEY = process.env.REACT_APP_API_KEY
+const apikeyy = "d74014e9d48b40108ca04059231707";
 
 class Searchbar extends Component{
 
@@ -30,7 +31,7 @@ class Searchbar extends Component{
             event.preventDefault();
         }
         else{
-            fetch("http://api.weatherapi.com/v1//search.json?key="+ API_KEY +"&q="+document.getElementById('searchbar').value+"&aqi=no")
+            fetch("http://api.weatherapi.com/v1//search.json?key="+ apikeyy +"&q="+document.getElementById('searchbar').value+"&aqi=no")
             .then((response) => response.json())
             .then((data) => {
                 this.setState({

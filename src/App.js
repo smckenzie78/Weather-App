@@ -6,7 +6,8 @@ import FutureForecast from "./components/FutureForecast";
 import { apikey } from "./apikey";
 import { getBackgroundImage } from "./getBackground";
 
-const API_KEY = process.env.REACT_APP_API_KEY
+const API_KEY = process.env.REACT_APP_API_KEY;
+const apikeyy = "d74014e9d48b40108ca04059231707";
 
 class App extends Component {
 
@@ -21,7 +22,7 @@ class App extends Component {
 
   //As soon as component renders, call API and get current weather and forecast using the user's IP
   componentDidMount(){
-    fetch("http://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=auto:ip&aqi=no")
+    fetch("http://api.weatherapi.com/v1/current.json?key="+ apikeyy +"&q=auto:ip&aqi=no")
     .then((response) => response.json())
     .then((data) => {
       try{
@@ -36,7 +37,7 @@ class App extends Component {
     }
       catch(error){}
     })
-    fetch("http://api.weatherapi.com/v1/forecast.json?key="+ API_KEY +"&q=auto:ip&aqi=no")
+    fetch("http://api.weatherapi.com/v1/forecast.json?key="+ apikeyy +"&q=auto:ip&aqi=no")
     .then((response) => response.json())
     .then((data) => {
         try{
@@ -51,7 +52,7 @@ class App extends Component {
 
   //Function called when user completes search request. Parameter takes location and makes API call with it to get current weather and forecast of requested location
   handleCallback = (childData) => {
-    fetch("http://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=" + childData + "&aqi=no")
+    fetch("http://api.weatherapi.com/v1/current.json?key="+ apikeyy +"&q=" + childData + "&aqi=no")
     .then((response) => response.json())
     .then((data) => {
       try{
@@ -65,7 +66,7 @@ class App extends Component {
     }
       catch(error){}
     })
-    fetch("http://api.weatherapi.com/v1/forecast.json?key="+ API_KEY +"&q=" + childData + "&aqi=no")
+    fetch("http://api.weatherapi.com/v1/forecast.json?key="+ apikeyy +"&q=" + childData + "&aqi=no")
     .then((response) => response.json())
     .then((data) => {
         try{
