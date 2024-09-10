@@ -67,11 +67,13 @@
     
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-    *{
-        padding: 0;
-        margin: 0;
+@media (max-height: 850px){
+    #temperature{
+        font-size: 90px;
+        text-align: center;
     }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
     
     .information{
         height: 100%;
