@@ -27,7 +27,7 @@ class Searchbar extends Component{
         }
         else{
             const query = document.getElementById('searchbar').value
-            fetch(`http://localhost:4000/api/search?query=${query}`)
+            fetch(`https://weather-server-gwemf6fcajczg8ar.westus2-01.azurewebsites.net/api/search?query=${query}`)
             .then((response) => response.json())
             .then((data) => {
                 this.setState({

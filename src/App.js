@@ -22,7 +22,7 @@ class App extends Component {
   //As soon as component renders, call API and get current weather and forecast using the user's IP
   componentDidMount(){
     const query = 'auto:ip';
-    fetch(`http://localhost:4000/api/weather?query=${query}`)
+    fetch(`https://weather-server-gwemf6fcajczg8ar.westus2-01.azurewebsites.net/api/weather?query=${query}`)
     .then((response) => response.json())
     .then((data) => {
       this.setState({
@@ -33,7 +33,7 @@ class App extends Component {
           image: getBackgroundImage(data.current.condition.text),
       })
     })
-    fetch(`http://localhost:4000/api/forecast?query=${query}`)
+    fetch(`https://weather-server-gwemf6fcajczg8ar.westus2-01.azurewebsites.net/api/forecast?query=${query}`)
     .then((response) => response.json())
     .then((data) => {
       this.setState({
@@ -45,7 +45,7 @@ class App extends Component {
   //Function called when user completes search request. Parameter takes location and makes API call with it to get current weather and forecast of requested location
   handleCallback = (childData) => {
     const query = childData;
-    fetch(`http://localhost:4000/api/weather?query=${query}`)
+    fetch(`https://weather-server-gwemf6fcajczg8ar.westus2-01.azurewebsites.net/api/weather?query=${query}`)
     .then((response) => response.json())
     .then((data) => {
       this.setState({
@@ -56,7 +56,7 @@ class App extends Component {
           image: getBackgroundImage(data.current.condition.text),
       })
     })
-    fetch(`http://localhost:4000/api/forecast?query=${query}`)
+    fetch(`https://weather-server-gwemf6fcajczg8ar.westus2-01.azurewebsites.net/api/forecast?query=${query}`)
     .then((response) => response.json())
     .then((data) => {
       this.setState({
