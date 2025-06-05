@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import '../styles/FutureForecast.css';
-import { apikey } from "../apikey";
 
 class FutureForecast extends Component{
 
