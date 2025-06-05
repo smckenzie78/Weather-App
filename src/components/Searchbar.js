@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 import '../styles/Searchbar.css';
-//import { apikey } from "../apikey";
-
-const API_KEY = process.env.REACT_APP_API_KEY
-//const apikeyy = "d74014e9d48b40108ca04059231707";
 
 class Searchbar extends Component{
 
@@ -12,7 +8,6 @@ class Searchbar extends Component{
     }
 
     optionSelect(option) {
-        console.log('what');
         document.getElementById('searchbar').value = option;
         this.props.parentCallback(document.getElementById('searchbar').value);
         this.setState({
@@ -31,7 +26,8 @@ class Searchbar extends Component{
             event.preventDefault();
         }
         else{
-            fetch("http://api.weatherapi.com/v1//search.json?key="+ API_KEY +"&q="+document.getElementById('searchbar').value+"&aqi=no")
+            const query = document.getElementById('searchbar').value
+            fetch(`http://localhost:4000/api/search?query=${query}`)
             .then((response) => response.json())
             .then((data) => {
                 this.setState({

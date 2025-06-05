@@ -5,7 +5,7 @@ import CurrentForecast from "./components/CurrentForecast";
 import FutureForecast from "./components/FutureForecast";
 import { getBackgroundImage } from "./getBackground";
 
-const API_KEY = process.env.REACT_APP_API_KEY;
+//auto:ip
 
 
 class App extends Component {
@@ -21,61 +21,47 @@ class App extends Component {
 
   //As soon as component renders, call API and get current weather and forecast using the user's IP
   componentDidMount(){
-    fetch("http://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=auto:ip&aqi=no")
+    const query = 'auto:ip';
+    fetch(`http://localhost:4000/api/weather?query=${query}`)
     .then((response) => response.json())
     .then((data) => {
-      try{
-        this.setState({
+      this.setState({
           city: data.location.name,
           region: data.location.region,
           temperature: data.current.temp_f,
           conditions: data.current.condition.text,
           image: getBackgroundImage(data.current.condition.text),
-          
-        })
-    }
-      catch(error){}
+      })
     })
-    //Fetching weather data based on user location
-    fetch("http://api.weatherapi.com/v1/forecast.json?key="+ API_KEY +"&q=auto:ip&aqi=no")
+    fetch(`http://localhost:4000/api/forecast?query=${query}`)
     .then((response) => response.json())
     .then((data) => {
-        try{
-            console.log(data)
-            this.setState({
-              forecast : data.forecast.forecastday[0].hour
-            })
-        }
-          catch(error){}
-        })
+      this.setState({
+          forecast : data.forecast.forecastday[0].hour
+      })
+    })
   }
 
   //Function called when user completes search request. Parameter takes location and makes API call with it to get current weather and forecast of requested location
   handleCallback = (childData) => {
-    fetch("http://api.weatherapi.com/v1/current.json?key="+ API_KEY +"&q=" + childData + "&aqi=no")
+    const query = childData;
+    fetch(`http://localhost:4000/api/weather?query=${query}`)
     .then((response) => response.json())
     .then((data) => {
-      try{
-        this.setState({
+      this.setState({
           city: data.location.name,
           region: data.location.region,
           temperature: data.current.temp_f,
           conditions: data.current.condition.text,
           image: getBackgroundImage(data.current.condition.text),
-        })
-    }
-      catch(error){}
+      })
     })
-    fetch("http://api.weatherapi.com/v1/forecast.json?key="+ API_KEY +"&q=" + childData + "&aqi=no")
+    fetch(`http://localhost:4000/api/forecast?query=${query}`)
     .then((response) => response.json())
     .then((data) => {
-        try{
-            console.log(data)
-            this.setState({
-              forecast : data.forecast.forecastday[0].hour
-            })
-        }
-          catch(error){}
+      this.setState({
+          forecast : data.forecast.forecastday[0].hour
+      })
     })
   }
 
